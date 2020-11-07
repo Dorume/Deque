@@ -5,11 +5,12 @@
         private Node head;
         private Node tail;
         public int Size { get; private set; }
+        public bool IsEmpty => Size == 0;
 
         public void Push_front(int number)
         {
             Node node = new Node(number);
-            if (IsEmpty())
+            if (IsEmpty)
             {
                 head = node;
                 head.Next = tail;
@@ -27,7 +28,7 @@
         public void Push_back(int number)
         {
             Node node = new Node(number);
-            if(IsEmpty())
+            if(IsEmpty)
             {
                 head = node;
                 head.Next = tail;
@@ -60,7 +61,6 @@
         }
         public int Front() => head.Data;
         public int Back() => tail.Data;
-        public bool IsEmpty() => Size == 0;
         public void Clear()
         {
             while (Size > 0)
