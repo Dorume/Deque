@@ -63,7 +63,7 @@
         public int Back() => tail.Data;
         public void Clear()
         {
-            while (Size > 0)
+            while (!IsEmpty)
                 Pop_back();
         }
 

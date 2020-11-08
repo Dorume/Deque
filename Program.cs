@@ -49,36 +49,34 @@ namespace Deque
         }
         static void Pop_front()
         {
-            if (stack.Size != 0)
-            {
+            if (stack.IsEmpty)
+                PrintError();
+            else
                 Console.WriteLine(stack.Pop_front());
-            }
-            else PrintError();
 
         }
 
         static void Pop_back()
         {
-            if (stack.Size != 0)
-            {
+            if (stack.IsEmpty)
+                PrintError();
+            else
                 Console.WriteLine(stack.Pop_back());
-            }
-            else PrintError();
 
         }
         static void Front()
         {
-            if (stack.Size != 0)
-                Console.WriteLine(stack.Front());
-            else
+            if (stack.IsEmpty)
                 PrintError();
+            else
+                Console.WriteLine(stack.Front());
         }
         static void Back()
         {
-            if (stack.Size != 0)
-                Console.WriteLine(stack.Back());
-            else
+            if (stack.IsEmpty)
                 PrintError();
+            else
+                Console.WriteLine(stack.Back());
         }
         static void Clear()
         {
