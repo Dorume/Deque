@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Deque
 {
@@ -10,7 +7,7 @@ namespace Deque
     {
         static string command;
         static int argument = 0;
-        static NodeStack stack = new NodeStack();
+        static Deque deque = new Deque();
         static void Main()
         {
             Dictionary<string, Action> commands = new Dictionary<string, Action>()
@@ -38,52 +35,52 @@ namespace Deque
 
         static void Push_front()
         {
-            stack.Push_front(argument);
+            deque.Push_front(argument);
             PrintOk();
         }
 
         static void Push_back()
         {
-            stack.Push_back(argument);
+            deque.Push_back(argument);
             PrintOk();
         }
         static void Pop_front()
         {
-            if (stack.IsEmpty)
+            if (deque.IsEmpty)
                 PrintError();
             else
-                Console.WriteLine(stack.Pop_front());
+                Console.WriteLine(deque.Pop_front());
 
         }
 
         static void Pop_back()
         {
-            if (stack.IsEmpty)
+            if (deque.IsEmpty)
                 PrintError();
             else
-                Console.WriteLine(stack.Pop_back());
+                Console.WriteLine(deque.Pop_back());
 
         }
         static void Front()
         {
-            if (stack.IsEmpty)
+            if (deque.IsEmpty)
                 PrintError();
             else
-                Console.WriteLine(stack.Front());
+                Console.WriteLine(deque.Front());
         }
         static void Back()
         {
-            if (stack.IsEmpty)
+            if (deque.IsEmpty)
                 PrintError();
             else
-                Console.WriteLine(stack.Back());
+                Console.WriteLine(deque.Back());
         }
         static void Clear()
         {
-            stack.Clear();
+            deque.Clear();
             PrintOk();
         }
-        static void Size() => Console.WriteLine(stack.Size);
+        static void Size() => Console.WriteLine(deque.Size);
 
         static void SplitCommandAndArgument()
         {

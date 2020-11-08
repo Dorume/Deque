@@ -1,6 +1,6 @@
 ﻿namespace Deque
 {
-    public class Node
+    class Node
     {
         public Node(int data)
         {

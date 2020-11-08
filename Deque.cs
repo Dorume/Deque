@@ -1,6 +1,6 @@
 ﻿namespace Deque
 {
-    public class NodeStack
+    class Deque
     {
         private Node head;
         private Node tail;
